@@ -24,7 +24,7 @@ while c < 26:
         data[chr(c + ord('a'))] = (x, y)
     c += 1
 # ls=[input().split(' ') for i in range(5)]
-s = input("Type the string for encryption or decryption : ").replce('j', 'i')
+s = input("Type the string for encryption or decryption : ").replace('j', 'i')
 # arr=[s[i]+s[i+1] for i in range(0,len(s)-1,2)]
 arr = []
 i = 0
@@ -52,7 +52,6 @@ if choice == 1:
                        ls[(x2 + 1) % 5][y2])
         else:
             ans.append(ls[x1][y2] + ls[x2][y1])
-
 else:
     for i in arr:
         x1, y1 = data[i[0]]
