@@ -1,18 +1,9 @@
-n = int(input("1) Encryption 2) Decryption : "))
+from string import ascii_letters
+n = int(input("1=> Encryption 2=> Decryption : "))
 s = input("Type string for  : ")
 key = int(input("Type key value : "))
-tmp = ""
+outval = ascii_letters[key:] + ascii_letters[:key]
 if n == 1:
-    for i in s:
-        if i < 'a':
-            tmp += chr((ord(i) - ord('A') + key) % 26 + ord('A'))
-        else:
-            tmp += chr((ord(i) - ord('a') + key) % 26 + ord('a'))
+    print("Answer string is", s.translate(str.maketrans(ascii_letters, outval)))
 else:
-    for i in s:
-        if i < 'a':
-            tmp += chr((ord(i) - ord('A') - key) % 26 + ord('A'))
-        else:
-            tmp += chr((ord(i) - ord('a') - key) % 26 + ord('a'))
-
-print("Answer string is", tmp)
+    print("Answer string is", s.translate(str.maketrans(outval, ascii_letters)))
